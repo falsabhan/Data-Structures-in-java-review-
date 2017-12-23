@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 
 public class Stack {
 
@@ -11,12 +12,14 @@ public Stack(int s) {
 	stackArray = new int[stackSize];
 	topItem = 0;
 	}
-public void push(int item) {
+public void push(int item) throws ArrayIndexOutOfBoundsException {
 	if(topItem < stackSize) {
 	stackArray[++topItem] = item;
+	System.out.println(topItem);
+	
 	}
 	else {
-		System.out.println("stack is full, can't add more data");
+		throw new ArrayIndexOutOfBoundsException();
 		
 	}
 	
@@ -28,10 +31,10 @@ public boolean isEmpty() {
 	
 	return (topItem == 0);
 	}
-public int pop()  {
+
+public int pop() throws StackOverflowError  {
 	if(topItem == 0) {
-		 System.out.println("error, stack overflow");
-		 return 0 ;
+		 throw new StackOverflowError();
 		}
 	else {
 		return stackArray[topItem--];
