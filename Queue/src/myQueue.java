@@ -1,7 +1,7 @@
 
 public class myQueue {
 private int queueSize;
-public int[] queueArray;
+private int[] queueArray;
 private int queueIndex;
 
 // instructor 
