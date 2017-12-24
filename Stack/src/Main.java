@@ -16,7 +16,7 @@ public class Main   {
 		stack.push(80);
 		stack.push(90);
 		stack.push(100);
-		System.out.println(stack.isSize());
+		System.out.println(stack.peek());
 		
 	}
 	

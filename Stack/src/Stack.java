@@ -12,20 +12,21 @@ public Stack(int s) {
 	stackArray = new int[stackSize];
 	topItem = 0;
 	}
-public void push(int item) throws ArrayIndexOutOfBoundsException {
+public void push(int item) {
 	if(topItem < stackSize) {
-	stackArray[++topItem] = item;
-	System.out.println(topItem);
+	stackArray[topItem] = item;
+	topItem++;
+	
 	
 	}
 	else {
-		throw new ArrayIndexOutOfBoundsException();
+		System.out.println("error, stack overflow");
 		
 	}
 	
 	}
 public int peek() {
-	return stackArray[topItem];
+	return stackArray[topItem-1];
 	}
 public boolean isEmpty() {
 	
